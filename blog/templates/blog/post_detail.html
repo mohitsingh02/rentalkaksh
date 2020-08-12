@@ -1,0 +1,58 @@
+{% extends 'blog/basic.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+{% block body %}
+
+
+    <div class="container mt-5">
+
+      <div class="container">   <!-- News jumbotron -->
+<div class="jumbotron text-center hoverable p-4">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 offset-md-1 mx-3 my-3">
+
+        <!-- Featured image -->
+        <div class="view overlay">
+          <img src="{{ object.post_img.url }}" class="img-fluid" alt="....">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-7 text-md-left ml-3 mt-3">
+
+        <h2 class="h2 mb-4">{{ object.title }}</h2>
+        <p class="font-weight-bold">{{ object.Desc}}</p>
+        <pre class="font-weight-normal mt-5">{{ post.content}}</pre>
+        <p class="font-weight-normal">By-- <a><strong>{{ object.author }}</strong></a>,{{ object.date_posted }}</p>
+        <div class="text-right">
+        <a class="btn btn-secondary" href="javascript:history.back()">Back</a>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- News jumbotron -->
+
+</div>
+
+    </div>
+
+    <div class="container-fluid grey px-0 fixed-bottom">
+      <div class="card stretch pt-1">
+        <p class="mb-1"> &COPY; Designed & Developed by:- One Touch Solutions</p>
+      </div>
+    </div>
+{% endblock %}

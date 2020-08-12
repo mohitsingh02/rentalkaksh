@@ -1,0 +1,22 @@
+.seprator{
+    height: 3px;
+    background-color: grey;
+    border-radius: 20px;
+}
+body{
+background-color:  rgb(212, 212, 212);
+}
+.bimg{
+background-image: url("/static/img/home.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+}
+.jumbotron{
+    background: transparent;
+    height: 50vh
+}
+.stretch {
+  text-align: center;
+  background-color: #eee;
+  padding-top: 20px;
+}

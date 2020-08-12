@@ -1,0 +1,89 @@
+{% extends 'blog/basic.html' %}
+{% load static %}
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/contact.css' %}">
+{% endblock %}
+{% block js %}
+ <script src="{% static 'blog/contact.js' %}"></script>
+{% endblock %}
+{% block body%}
+<div class="container   my-4">
+        <h1>Contact Us</h1>
+        <form onsubmit="return fn1();" action="{% url 'contact_submit' %}" method="post">
+              {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input id="nam" name="cust_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Name" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Phone</label>
+                <input type="number" name="cust_phone" class="form-control" id="mob" placeholder="Enter Mobile No" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" name="cust_email" class="form-control" id="mail" placeholder="name@example.com" required>
+            </div>
+
+            <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-2 pt-0">Want to:</legend>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Rent a room"
+                             checked>
+                      <label  class="form-check-label" for="gridRadios1">
+                        Rent a room
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Lend a room">
+                      <label  class="form-check-label" for="gridRadios2">
+                        Lend a room
+                      </label>
+                    </div>
+                  </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Tell Us about: </label>
+                <textarea class="form-control" name="cust_text" id="exampleFormControlTextarea1" rows="3" placeholder="Share some thoughts"></textarea>
+            </div>
+            <button onclick="fn1()" class="btn btn-danger" type="submit" >Submit</button>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h2>Better See Us, in Person! </h2>
+                    <p id="pl">We Love To Meet Our Customer. So Feel Free to Visit in Business Hours</p>
+                </div>
+              </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h2 class="card-title">Rentalकक्ष</h2>
+                            <p class="card-text">House No: 234, Near Post Office<br>Mohan Co. , Mallital,<br> Nanitaal
+                            </p>
+                            <p>123-456-789 , 7017686210</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h2 class="card-title">Hours</h2>
+                            <p> Mon 9:00 AM - 4:00 PM</p>
+                            <p> Wed 9:00 AM - 4:00 PM</p>
+                            <p> Fri 9:00 AM - 4:00 PM</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+<div class="container-fluid grey px-0 text-center">
+      <div class="card stretch pt-1">
+        <p class="mb-1"> &COPY; Designed & Developed by:- One Touch Solutions</p>
+      </div>
+    </div>
+{%endblock%}

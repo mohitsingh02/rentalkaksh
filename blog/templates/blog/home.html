@@ -1,0 +1,77 @@
+{% extends 'blog/basic.html' %}
+{% load static %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/search.css' %}">
+{% endblock %}
+{% block body %}
+ <div class="container-fluid bimg ">
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid mb-4">
+        <div>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm text-center">
+                <h1>Rentalकक्ष</h1>
+                <p style="font-size: large; font-weight: bolder;">Providing Room that Fit's your Budget </p>
+                <form method="get" action="/search">
+                  <div class="input-group  mb-3">
+                    <input type="text" name="search" id="search" class="form-control" aria-label="Sizing example input"
+                           placeholder="Search for Rooms, type location, no of rooms"
+                      aria-describedby="inputGroup-sizing-default">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+    <div class="container">
+      {% for room in rooms %}
+      <div class="card mb-0" style="max-width: 100vw;">
+        <div class="row no-gutters mt-2">
+          <div class="col-md-4">
+            <img src="{{ room.img1.url }}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <a style="color: black;" href="{% url 'room-detail' room.id %}"><h2 class="card-title">{{ room.room }}</h2></a>
+              <p class="card-text mb-1">
+                {{ room.info }}
+              </p>
+              <p class="card-text mb-1"><strong>No of Rooms:-</strong> {{ room.no_room }}</p>
+              <p class="card-text mb-1"><strong>Location :-</strong> {{ room.location }}</p>
+              <p class="card-text mb-1" style="font-size: larger;"><strong>Rent :- Rs.{{ room.rent }}</strong></p>
+            </div>
+          </div>
+        </div>
+        <hr class="seprator ml-4 mr-4 mb-0">
+      </div>
+      {% endfor %}
+       {% if is_paginated %}
+        {% if page_obj.has_previous %}
+            <a class="btn btn-outline-danger mt-2 mb-4" href="?page=1">First</a>
+            <a class="btn btn-outline-danger mt-2 mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+        <a class="btn btn-info mt-2 mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <a class="btn btn-outline-danger mt-2 mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a class="btn btn-outline-danger mt-2 mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+
+      {% endif %}
+    </div>
+    <div class="container-fluid grey px-0">
+      <div class="card stretch pt-1">
+        <p class="mb-1"> &COPY; Designed & Developed by:- One Touch Solutions</p>
+      </div>
+    </div>
+{% endblock %}

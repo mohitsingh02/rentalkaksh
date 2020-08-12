@@ -1,0 +1,9 @@
+.stretch {
+  width: 100vw;
+  text-align: center;
+  background-color: #eee;
+  padding-top: 20px;
+}
+body{
+background-color: grey;
+}

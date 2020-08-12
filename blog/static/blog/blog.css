@@ -1,0 +1,23 @@
+body {
+   overflow-x: hidden;
+}
+.img{
+background-size: cover;
+background-position: center;
+height: 40vh;
+text-align: center;
+}
+.heading {
+  color: white;
+  font-size: 48px;
+  font-weight: bolder;
+}
+.grey {
+  background-color: #eee;
+}
+.stretch {
+  width: 100vw;
+  text-align: center;
+  background-color: #eee;
+  padding-top: 20px;
+}
