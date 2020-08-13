@@ -25,7 +25,7 @@ SECRET_KEY = 'z(hky=jt3+r5qny1(v2r&gw_b&3a8gax)88kl4sr80+5b%tn9+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rentalkaksh-final.herokuapp.com']
 
 
 # Application definition
