@@ -39,7 +39,7 @@ class Room(models.Model):
     location = models.CharField(max_length=50)
     adress = models.TextField()
     owner_name = models.CharField(max_length=100)
-    owner_phone = models.IntegerField()
+    owner_phone = models.BigIntegerField()
     rent = models.IntegerField()
     img1 = models.ImageField(default='default_room.jpg', upload_to='room_pics')
     img2 = models.ImageField(default='default_room.jpg', upload_to='room_pics')
