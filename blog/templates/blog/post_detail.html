@@ -33,7 +33,7 @@
 
         <h2 class="h2 mb-4">{{ object.title }}</h2>
         <p class="font-weight-bold">{{ object.Desc}}</p>
-        <p class="font-weight-normal mt-5">{{ post.content}}</p>
+        <p class="font-weight-normal mt-5">{{ post.content|safe }}</p>
         <p class="font-weight-normal">By-- <a><strong>{{ object.author }}</strong></a>,{{ object.date_posted }}</p>
         <div class="text-right">
         <a class="btn btn-secondary" href="javascript:history.back()">Back</a>
